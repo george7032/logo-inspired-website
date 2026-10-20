@@ -114,4 +114,5 @@
 
 @utility bg-sunset { background-image: var(--gradient-sunset); }
 @utility bg-overlay { background-image: var(--gradient-overlay); }
+@utility bg-whatsapp { background-color: oklch(0.68 0.17 150); }
 @layer base { h1,h2,h3 { font-family: var(--font-display); } body { font-family: var(--font-sans); } }
