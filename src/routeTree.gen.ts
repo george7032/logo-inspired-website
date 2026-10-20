@@ -10,13 +10,26 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as ToursRouteImport } from './routes/tours'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as PlanMyTripRouteImport } from './routes/plan-my-trip'
+import { Route as StaysRouteImport } from './routes/stays'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as TransportRouteImport } from './routes/transport'
+import { Route as ExperiencesIndexRouteImport } from './routes/experiences.index'
+import { Route as ExperiencesCategoryRouteImport } from './routes/experiences.$category'
+import { Route as ToursIndexRouteImport } from './routes/tours.index'
+import { Route as ToursSlugRouteImport } from './routes/tours.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -24,49 +37,153 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ToursRoute = ToursRouteImport.update({
-  id: '/tours',
-  path: '/tours',
+const PlanMyTripRoute = PlanMyTripRouteImport.update({
+  id: '/plan-my-trip',
+  path: '/plan-my-trip',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StaysRoute = StaysRouteImport.update({
+  id: '/stays',
+  path: '/stays',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransportRoute = TransportRouteImport.update({
+  id: '/transport',
+  path: '/transport',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencesIndexRoute = ExperiencesIndexRouteImport.update({
+  id: '/experiences/',
+  path: '/experiences/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencesCategoryRoute = ExperiencesCategoryRouteImport.update({
+  id: '/experiences/$category',
+  path: '/experiences/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToursIndexRoute = ToursIndexRouteImport.update({
+  id: '/tours/',
+  path: '/tours/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToursSlugRoute = ToursSlugRouteImport.update({
+  id: '/tours/$slug',
+  path: '/tours/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRoute
-  '/tours': typeof ToursRoute
+  '/faq': typeof FaqRoute
+  '/plan-my-trip': typeof PlanMyTripRoute
+  '/stays': typeof StaysRoute
+  '/support': typeof SupportRoute
+  '/transport': typeof TransportRoute
+  '/experiences/$category': typeof ExperiencesCategoryRoute
+  '/tours/$slug': typeof ToursSlugRoute
+  '/experiences/': typeof ExperiencesIndexRoute
+  '/tours/': typeof ToursIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRoute
-  '/tours': typeof ToursRoute
+  '/faq': typeof FaqRoute
+  '/plan-my-trip': typeof PlanMyTripRoute
+  '/stays': typeof StaysRoute
+  '/support': typeof SupportRoute
+  '/transport': typeof TransportRoute
+  '/experiences/$category': typeof ExperiencesCategoryRoute
+  '/tours/$slug': typeof ToursSlugRoute
+  '/experiences': typeof ExperiencesIndexRoute
+  '/tours': typeof ToursIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRoute
-  '/tours': typeof ToursRoute
+  '/faq': typeof FaqRoute
+  '/plan-my-trip': typeof PlanMyTripRoute
+  '/stays': typeof StaysRoute
+  '/support': typeof SupportRoute
+  '/transport': typeof TransportRoute
+  '/experiences/$category': typeof ExperiencesCategoryRoute
+  '/tours/$slug': typeof ToursSlugRoute
+  '/experiences/': typeof ExperiencesIndexRoute
+  '/tours/': typeof ToursIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/services' | '/tours'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/plan-my-trip'
+    | '/stays'
+    | '/support'
+    | '/transport'
+    | '/experiences/$category'
+    | '/tours/$slug'
+    | '/experiences/'
+    | '/tours/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/services' | '/tours'
-  id: '__root__' | '/' | '/contact' | '/services' | '/tours'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/plan-my-trip'
+    | '/stays'
+    | '/support'
+    | '/transport'
+    | '/experiences/$category'
+    | '/tours/$slug'
+    | '/experiences'
+    | '/tours'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faq'
+    | '/plan-my-trip'
+    | '/stays'
+    | '/support'
+    | '/transport'
+    | '/experiences/$category'
+    | '/tours/$slug'
+    | '/experiences/'
+    | '/tours/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  ServicesRoute: typeof ServicesRoute
-  ToursRoute: typeof ToursRoute
+  FaqRoute: typeof FaqRoute
+  PlanMyTripRoute: typeof PlanMyTripRoute
+  StaysRoute: typeof StaysRoute
+  SupportRoute: typeof SupportRoute
+  TransportRoute: typeof TransportRoute
+  ExperiencesCategoryRoute: typeof ExperiencesCategoryRoute
+  ToursSlugRoute: typeof ToursSlugRoute
+  ExperiencesIndexRoute: typeof ExperiencesIndexRoute
+  ToursIndexRoute: typeof ToursIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -78,6 +195,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -85,18 +209,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/tours': {
-      id: '/tours'
+    '/plan-my-trip': {
+      id: '/plan-my-trip'
+      path: '/plan-my-trip'
+      fullPath: '/plan-my-trip'
+      preLoaderRoute: typeof PlanMyTripRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stays': {
+      id: '/stays'
+      path: '/stays'
+      fullPath: '/stays'
+      preLoaderRoute: typeof StaysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transport': {
+      id: '/transport'
+      path: '/transport'
+      fullPath: '/transport'
+      preLoaderRoute: typeof TransportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences/': {
+      id: '/experiences/'
+      path: '/experiences'
+      fullPath: '/experiences/'
+      preLoaderRoute: typeof ExperiencesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences/$category': {
+      id: '/experiences/$category'
+      path: '/experiences/$category'
+      fullPath: '/experiences/$category'
+      preLoaderRoute: typeof ExperiencesCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/': {
+      id: '/tours/'
       path: '/tours'
-      fullPath: '/tours'
-      preLoaderRoute: typeof ToursRouteImport
+      fullPath: '/tours/'
+      preLoaderRoute: typeof ToursIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tours/$slug': {
+      id: '/tours/$slug'
+      path: '/tours/$slug'
+      fullPath: '/tours/$slug'
+      preLoaderRoute: typeof ToursSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -104,9 +277,17 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  ServicesRoute: ServicesRoute,
-  ToursRoute: ToursRoute,
+  FaqRoute: FaqRoute,
+  PlanMyTripRoute: PlanMyTripRoute,
+  StaysRoute: StaysRoute,
+  SupportRoute: SupportRoute,
+  TransportRoute: TransportRoute,
+  ExperiencesCategoryRoute: ExperiencesCategoryRoute,
+  ToursSlugRoute: ToursSlugRoute,
+  ExperiencesIndexRoute: ExperiencesIndexRoute,
+  ToursIndexRoute: ToursIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
