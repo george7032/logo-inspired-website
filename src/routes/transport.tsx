@@ -25,8 +25,8 @@ function Transport() {
   const [from, setFrom] = useState("JKIA");
   const [to, setTo] = useState("Maasai Mara");
   const [v, setV] = useState("Land Cruiser 4x4");
-  const km = Math.abs(places[from] - places[to]) || 15;
-  const base = Math.max(30, Math.round(km * 0.9 * rates[v]));
+  const km = Math.abs((places[from] ?? 0) - (places[to] ?? 0)) || 15;
+  const base = Math.max(30, Math.round(km * 0.9 * (rates[v] ?? 1)));
   const sel = (val: string, set: (s: string) => void, opts: string[], label: string) => (
     <label className="text-sm font-medium">{label}<select value={val} onChange={(e) => set(e.target.value)} className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2">{opts.map((o) => <option key={o}>{o}</option>)}</select></label>
   );
