@@ -96,7 +96,7 @@ function Transport() {
           </div>
           <h3 className="mt-10 text-xl font-bold text-secondary">FAQs</h3>
           <Accordion type="single" collapsible>
-            {[["How long will the driver wait?", "Up to 60 minutes after landing at no extra charge; we track your flight."], ["Do you have child seats?", "Yes, free on request — tell us the children's ages."], ["What if my flight is delayed?", "We monitor flights and adjust pickup automatically."], ["How can I pay?", "Card, bank transfer, M-Pesa or cash to the driver."]].map(([q, a]) => <AccordionItem key={q} value={q}><AccordionTrigger>{q}</AccordionTrigger><AccordionContent>{a}</AccordionContent></AccordionItem>)}
+            {([["How long will the driver wait?", "Up to 60 minutes after landing at no extra charge; we track your flight."], ["Do you have child seats?", "Yes, free on request — tell us the children's ages."], ["What if my flight is delayed?", "We monitor flights and adjust pickup automatically."], ["How can I pay?", "Card, bank transfer, M-Pesa or cash to the driver."]] as [string, string][]).map(([q, a]) => <AccordionItem key={q} value={q}><AccordionTrigger>{q}</AccordionTrigger><AccordionContent>{a}</AccordionContent></AccordionItem>)}
           </Accordion>
         </div>
       </section>

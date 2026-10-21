@@ -29,7 +29,7 @@ export const Route = createFileRoute("/tours/$slug")({
   component: Detail,
 });
 
-const faqs = [
+const faqs: [string, string][] = [
   ["What should I pack?", "Neutral clothing, a warm layer for early drives, sunscreen, hat and binoculars."],
   ["Is it safe for children?", "Yes. We provide child seats and family-friendly lodges."],
   ["How do I pay?", "A deposit secures your booking; the balance is due 30 days before travel. We accept cards, bank transfer and M-Pesa."],
