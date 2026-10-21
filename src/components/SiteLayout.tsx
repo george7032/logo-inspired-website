@@ -175,7 +175,7 @@ export function TestimonialCard({ name, country, text }: { name: string; country
 export type Field = { name: string; label: string; type?: string; options?: string[]; required?: boolean };
 
 /** Sends the filled form to WhatsApp as a pre-written message. */
-export function EnquiryForm({ topic, fields, submitLabel = "Send enquiry" }: { topic: string; fields?: Field[]; submitLabel?: string }) {
+export function EnquiryForm({ topic, fields, submitLabel = "Send enquiry" }: { topic: string; fields?: Field[] | undefined; submitLabel?: string }) {
   const [sent, setSent] = useState(false);
   const f: Field[] = fields ?? [
     { name: "Name", label: "Your name", required: true },

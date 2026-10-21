@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { Compass, Sparkles, Car, BedDouble, Headphones, ShieldCheck, Award, Route as RouteIcon, Building } from "lucide-react";
+import { Compass, Sparkles, Car, BedDouble, Headphones, ShieldCheck, Award, Route as RouteIcon } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import { SiteLayout, SectionHeading, PackageCard, CTABanner, TestimonialCard } from "@/components/SiteLayout";
 import { packages, testimonials, img, IMG } from "@/lib/packages";
@@ -148,7 +148,6 @@ function Index() {
           <img key={i} src={img(i, 400)} alt="Safari moment" loading="lazy" className="aspect-square w-full object-cover" />
         ))}
       </section>
-      <Building className="hidden" />
     </SiteLayout>
   );
 }
