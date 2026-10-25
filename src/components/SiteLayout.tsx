@@ -26,7 +26,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             <span className="hidden sm:inline">{EMAIL}</span>
             <span className="sm:hidden">Email us</span>
           </a>
-          <SocialLinks className="text-xs" iconClass="h-3.5 w-3.5" />
+          <SocialLinks withEmail={false} className="text-xs" iconClass="h-3.5 w-3.5" />
         </div>
       </div>
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
