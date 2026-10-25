@@ -25,8 +25,8 @@ export function SocialIcon({ label, className = "h-4 w-4" }: { label: string; cl
   );
 }
 
-/** Horizontal row of social icons + email link. */
-export function SocialLinks({ className = "", iconClass = "h-4 w-4" }: { className?: string; iconClass?: string }) {
+/** Horizontal row of social icons (optionally with an email link). */
+export function SocialLinks({ className = "", iconClass = "h-4 w-4", withEmail = true }: { className?: string; iconClass?: string; withEmail?: boolean }) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       {SOCIALS.map((s) => (
@@ -34,9 +34,7 @@ export function SocialLinks({ className = "", iconClass = "h-4 w-4" }: { classNa
           <SocialIcon label={s.label} className={iconClass} />
         </a>
       ))}
-      <a href={`mailto:${EMAIL_TO}`} className="text-xs underline-offset-2 hover:underline" title={EMAIL}>
-        {EMAIL}
-      </a>
+      {withEmail && <a href={`mailto:${EMAIL_TO}`} className="text-xs underline-offset-2 hover:underline" title={EMAIL}>{EMAIL}</a>}
     </div>
   );
 }
