@@ -1,0 +1,40 @@
+import { SOCIALS, EMAIL, EMAIL_TO } from "@/lib/packages";
+
+export function TikTokIcon({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    </svg>
+  );
+}
+
+export function SocialIcon({ label, className = "h-4 w-4" }: { label: string; className?: string }) {
+  if (label === "TikTok") return <TikTokIcon className={className} />;
+  if (label === "Instagram")
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+      </svg>
+    );
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
+
+/** Horizontal row of social icons (optionally with an email link). */
+export function SocialLinks({ className = "", iconClass = "h-4 w-4", withEmail = true }: { className?: string; iconClass?: string; withEmail?: boolean }) {
+  return (
+    <div className={`flex items-center gap-3 ${className}`}>
+      {SOCIALS.map((s) => (
+        <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={`${s.label} — opens in a new tab`} title={s.label} className="transition hover:scale-110 hover:text-accent">
+          <SocialIcon label={s.label} className={iconClass} />
+        </a>
+      ))}
+      {withEmail && <a href={`mailto:${EMAIL_TO}`} className="text-xs underline-offset-2 hover:underline" title={EMAIL}>{EMAIL}</a>}
+    </div>
+  );
+}
