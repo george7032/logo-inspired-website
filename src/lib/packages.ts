@@ -25,6 +25,15 @@ export const WHATSAPP = "254799034311";
 export const PHONE = "+254 799 034311";
 export const waLink = (msg = "Hi, I'd like to enquire about a trip.") => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
+/** Displayed on the site; mailto links send to EMAIL_TO (the Gmail inbox). */
+export const EMAIL = "info@parkkridonellytour.co.ke";
+export const EMAIL_TO = "parkkridonellytoursltd@gmail.com";
+export const SOCIALS = [
+  { label: "TikTok", href: "https://www.tiktok.com/@parkkridonellytoursltd" },
+  { label: "Instagram", href: "https://www.instagram.com/parkkridonellytoursltd/" },
+  { label: "Facebook", href: "https://web.facebook.com/profile.php?id=61595773615573" },
+] as const;
+
 export type TourType = "Bespoke" | "Group Departure" | "Day Trip" | "Multi-Day Safari";
 export type Pkg = {
   slug: string; title: string; type: TourType; destination: string; days: number; priceFrom: number;
