@@ -2,7 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { Menu, X, MessageCircle, Star, MapPin, Clock, Phone, Mail } from "lucide-react";
 import logo from "@/assets/logo.jpg.asset.json";
-import { img, waLink, PHONE, type Pkg } from "@/lib/packages";
+import { img, waLink, PHONE, EMAIL, EMAIL_TO, type Pkg } from "@/lib/packages";
+import { SocialLinks } from "@/components/SocialLinks";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -18,6 +19,16 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen flex flex-col">
+      <div className="border-b border-border bg-secondary text-secondary-foreground">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5">
+          <a href={`mailto:${EMAIL_TO}`} className="flex items-center gap-2 text-xs opacity-90 hover:text-accent">
+            <Mail className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">{EMAIL}</span>
+            <span className="sm:hidden">Email us</span>
+          </a>
+          <SocialLinks className="text-xs" iconClass="h-3.5 w-3.5" />
+        </div>
+      </div>
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2">
           <Link to="/" className="flex items-center gap-3">
@@ -68,10 +79,12 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </div>
           <div className="space-y-2 text-sm opacity-90">
             <p className="font-display text-base">Contact</p>
+            <a href={`mailto:${EMAIL_TO}`} className="flex items-center gap-2 hover:text-accent"><Mail className="h-4 w-4" />{EMAIL}</a>
             <a href={`tel:${PHONE.replace(/\s/g, "")}`} className="flex items-center gap-2 hover:text-accent"><Phone className="h-4 w-4" />{PHONE}</a>
             <a href={waLink()} className="flex items-center gap-2 hover:text-accent"><MessageCircle className="h-4 w-4" />WhatsApp us</a>
-            <p className="flex items-center gap-2"><MapPin className="h-4 w-4" />Nairobi, Kenya</p>
+            <p className="flex items-center gap-2"><MapPin className="h-4 w-4" />Gateway Mall, Mombasa Road · Nairobi</p>
             <p className="flex items-center gap-2"><Clock className="h-4 w-4" />Support 24/7</p>
+            <SocialLinks className="pt-1" />
           </div>
         </div>
         <p className="border-t border-secondary-foreground/15 py-4 text-center text-xs opacity-70">© {new Date().getFullYear()} Kridonelly Safaris · Nairobi, Kenya</p>

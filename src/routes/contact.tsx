@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Mail } from "lucide-react";
 import { SiteLayout, PageHero, EnquiryForm } from "@/components/SiteLayout";
-import { img, IMG, waLink, PHONE } from "@/lib/packages";
+import { SocialLinks } from "@/components/SocialLinks";
+import { img, IMG, waLink, PHONE, EMAIL, EMAIL_TO } from "@/lib/packages";
 import { meta } from "@/lib/meta";
 
 export const Route = createFileRoute("/contact")({
