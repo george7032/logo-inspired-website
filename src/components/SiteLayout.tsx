@@ -7,8 +7,8 @@ import { SocialLinks } from "@/components/SocialLinks";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/tours", label: "Safaris & Tours" },
-  { to: "/experiences", label: "Experiences" },
+  { to: "/tours/", label: "Safaris & Tours" },
+  { to: "/experiences/", label: "Experiences" },
   { to: "/transport", label: "Transport" },
   { to: "/stays", label: "Stays" },
   { to: "/about", label: "About" },
@@ -71,8 +71,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           </div>
           <div className="space-y-2 text-sm opacity-90">
             <p className="font-display text-base">Services</p>
-            <Link to="/tours" className="block hover:text-accent">Safaris & group departures</Link>
-            <Link to="/experiences" className="block hover:text-accent">Niche experiences</Link>
+            <Link to="/tours/" className="block hover:text-accent">Safaris & group departures</Link>
+            <Link to="/experiences/" className="block hover:text-accent">Niche experiences</Link>
             <Link to="/transport" className="block hover:text-accent">Airport transfers & vehicle hire</Link>
             <Link to="/stays" className="block hover:text-accent">Lodge & hotel booking</Link>
             <Link to="/support" className="block hover:text-accent">24/7 travel support</Link>

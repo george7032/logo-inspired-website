@@ -25,7 +25,7 @@ export const Route = createFileRoute("/tours/$slug")({
       { name: "twitter:image", content: img(p.image, 1200) },
     ] : [{ title: "Tour not found" }, { name: "robots", content: "noindex" }],
   }),
-  notFoundComponent: () => <SiteLayout><div className="py-32 text-center"><p className="text-2xl">Tour not found.</p><Link to="/tours" className="text-primary">Back to tours</Link></div></SiteLayout>,
+  notFoundComponent: () => <SiteLayout><div className="py-32 text-center"><p className="text-2xl">Tour not found.</p><Link to="/tours/" className="text-primary">Back to tours</Link></div></SiteLayout>,
   component: Detail,
 });
 

@@ -19,8 +19,8 @@ export const Route = createFileRoute("/")({
 });
 
 const offers = [
-  { icon: Compass, title: "Curated Tours & Packages", to: "/tours" },
-  { icon: Sparkles, title: "Specialized Travel", to: "/experiences" },
+  { icon: Compass, title: "Curated Tours & Packages", to: "/tours/" },
+  { icon: Sparkles, title: "Specialized Travel", to: "/experiences/" },
   { icon: Car, title: "Transport & Mobility", to: "/transport" },
   { icon: BedDouble, title: "Hospitality & Stays", to: "/stays" },
   { icon: Headphones, title: "Client Support", to: "/support" },
@@ -38,7 +38,7 @@ const styles = [
   { title: "Cultural", img: IMG.culture, to: "/experiences/cultural" },
   { title: "Romantic", img: IMG.romance, to: "/experiences/romantic" },
   { title: "Corporate", img: IMG.conference, to: "/experiences/corporate" },
-  { title: "Family", img: IMG.family, to: "/tours" },
+  { title: "Family", img: IMG.family, to: "/tours/" },
 ];
 
 const steps = ["Tell us your dream", "Get a custom itinerary", "Confirm and pay securely", "Travel with 24/7 support"];
@@ -56,7 +56,7 @@ function Index() {
           <h1 className="mt-4 max-w-3xl text-5xl font-bold leading-tight sm:text-6xl">Your Journey Into the Wild, Perfectly Crafted.</h1>
           <p className="mt-6 max-w-xl text-lg opacity-90">Tailor-made safaris, group departures and seamless travel across Kenya & East Africa.</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link to="/tours" className="rounded-full bg-sunset px-6 py-3 font-semibold text-primary-foreground shadow-lg">Explore Safaris</Link>
+            <Link to="/tours/" className="rounded-full bg-sunset px-6 py-3 font-semibold text-primary-foreground shadow-lg">Explore Safaris</Link>
             <Link to="/plan-my-trip" className="rounded-full border border-primary-foreground/60 px-6 py-3 font-semibold hover:bg-primary-foreground/10">Plan My Trip</Link>
           </div>
         </div>
@@ -92,7 +92,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4">
           <SectionHeading eyebrow="Featured packages" title="Our most-loved journeys" />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{featured.map((p) => <PackageCard key={p.slug} p={p} />)}</div>
-          <Link to="/tours" className="mt-8 inline-block font-semibold text-primary">See all safaris →</Link>
+          <Link to="/tours/" className="mt-8 inline-block font-semibold text-primary">See all safaris →</Link>
         </div>
       </section>
 
