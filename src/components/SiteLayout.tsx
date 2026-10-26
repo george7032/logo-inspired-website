@@ -32,7 +32,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo.url} alt="Kridonelly Safaris logo" className="h-12 w-12 rounded-full object-cover" />
+            <img src={logo} alt="Kridonelly Safaris logo" className="h-12 w-12 rounded-full object-cover" />
             <span className="hidden font-display text-base font-bold text-secondary sm:block">Kridonelly Safaris</span>
           </Link>
           <nav className="hidden items-center gap-5 text-sm font-semibold lg:flex">
@@ -60,7 +60,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <footer className="bg-secondary text-secondary-foreground">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <img src={logo.url} alt="" className="h-20 w-20 rounded-full object-cover" />
+            <img src={logo} alt="" className="h-20 w-20 rounded-full object-cover" />
             <p className="mt-3 font-display tracking-widest text-accent">Discover the wild heart of Africa</p>
             <NewsletterForm />
           </div>
