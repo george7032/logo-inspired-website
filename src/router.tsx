@@ -10,6 +10,9 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    // Keep trailing slashes so every page exports as a folder with its own
+    // index.html and works on static hosting (cPanel/Apache, any CDN).
+    trailingSlash: "always",
   });
 
   return router;
