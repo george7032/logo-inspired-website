@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { Menu, X, MessageCircle, Star, MapPin, Clock, Phone, Mail } from "lucide-react";
-import logo from "@/assets/logo.jpg.asset.json";
+import logo from "@/assets/logo.jpg";
 import { img, waLink, PHONE, EMAIL, EMAIL_TO, type Pkg } from "@/lib/packages";
 import { SocialLinks } from "@/components/SocialLinks";
 
